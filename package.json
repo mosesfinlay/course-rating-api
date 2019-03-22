@@ -1,0 +1,27 @@
+{
+  "name": "techdegree-fullstackjs-course-review-rest-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js localhost 5000",
+    "test": "node_modules/.bin/_mocha",
+    "db:seed": "mongoimport --db course-api --collection courses --type=json --jsonArray --file seed-data/courses.json && mongoimport --db course-api --collection users --type=json --jsonArray --file seed-data/users.json && mongoimport --db course-api --collection reviews --type=json --jsonArray --file seed-data/reviews.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "bcrypt": "^3.0.5",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.4.19",
+    "morgan": "^1.9.0"
+  }
+}
