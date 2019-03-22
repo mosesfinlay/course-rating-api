@@ -10,7 +10,7 @@ describe("User Routes", () => {
   it("Should return the corresponding user document when a GET request is made to /api/users with correct credentials", done => {
     chai.request("http://localhost:5000")
       .get("/api/users")
-      .set("Authorization", "Basic am9obkBzbWl0aC5jb206cGFzc3dvcmQ=")
+      .set("Authorization", "Basic am9lQHNtaXRoLmNvbTpwYXNzd29yZA==")
       .end((err, res) => {
         expect(res.body).to.have.own.property("_id");
         expect(res.body).to.have.own.property("fullName");
