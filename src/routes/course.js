@@ -90,7 +90,8 @@ const updateCourse = (req, res, next) => {
 
 // POST /api/courses/:courseId/reviews
 const createReview = (req, res, next) => {
-  if (req.currentUser._id == req.course.user) {
+  // Checks that the creator of a course is not reviewing their on course
+  if ((req.currentUser._id).toString() === (req.course.user).toString()) {
     const err = new Error("You are not allowed to review your own course.");
     err.status = 403;
     return next(err);

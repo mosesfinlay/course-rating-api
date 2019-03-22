@@ -12,7 +12,7 @@ const ReviewSchema = new Schema({
   },
   rating: {
     type: Number,
-    min: 0,
+    min: 1,
     max: 5
   },
   review: {
